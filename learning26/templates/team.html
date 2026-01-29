@@ -14,8 +14,15 @@
         <h3>{{i}}</h3>
     {% endfor %}  
     
-    <h1>if</h1>
-    {if trophi <= 5}{}
+    
+
+    {% if trophy >= 5 %}
+        <h1>good winning</h1>
+    {% else %}
+        <h1>bad winning<h1>
+    {% endif %}
+
+    
 
 </body>
 </html>
