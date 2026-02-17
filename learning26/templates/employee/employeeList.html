@@ -1,14 +1,19 @@
+{% extends "base.html" %}
+
+{% block content  %}
 <h1>EMPLOYEE LIST</h1>
+<a href="{% url 'createEmployeeWithForm' %}">CREATE EMPLOYEE</a>
+<a href="{% url 'filterEmployee'%}">FILTER</a>
 
 
-{% for emp in employees%}
+{% comment %}{% for emp in employees%}
     {{emp.id}}
     {{emp.name}}
     {{emp.age}}
     {{emp.salary}}
     {{emp.join_date}}
     {{emp.post}}
-{% endfor %}
+{% endfor %}  {% endcomment %}
 
 <table>
     <thead>
@@ -19,10 +24,11 @@
             <th>Salary</th>
             <th>Join Date</th>
             <th>Post</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        {% for emp in employees%}
+            {% for emp in employees %}
         <tr>
             <td>{{emp.id}}</td>
             <td>{{emp.name}}</td>
@@ -30,9 +36,15 @@
             <td>{{emp.salary}}</td>
             <td>{{emp.join_date}}</td>
             <td>{{emp.post}}</td>
+            <td>
+                {% comment %} <a href="{% url 'deleteEmployee' %}">DELETE</a> {% endcomment %}
+                <a href="{% url 'deleteEmployee' emp.id %}">DELETE</a>
+                <a href="{% url 'updateEmployee' emp.id%}">update</a>
+            </td>
 
         </tr>
         {% endfor %}
         
     </tbody>
 </table>
+{% endblock content  %}
