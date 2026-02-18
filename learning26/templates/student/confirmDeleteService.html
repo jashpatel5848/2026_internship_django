@@ -1,0 +1,15 @@
+
+
+<h2>
+    Are you sure you want to delete service:
+    <strong>{{ service.service_name }}</strong> ?
+</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">YES DELETE</button>
+    <a href="{% url 'serviceList' %}" class="btn btn-secondary">CANCEL</a>
+</form>
+
+</body>
+</html>

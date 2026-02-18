@@ -74,7 +74,7 @@ class Service(models.Model):
     discount = models.IntegerField(null=True)
     categoryId = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
 
-
+                    
     class Meta:
         db_table = "service"
 
